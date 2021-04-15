@@ -63,7 +63,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/{service}', [OrdersController::class, 'changeQuantity'])->name('orders.qty');
         Route::get('/{user}', [OrdersController::class, 'index'])->name('orders.index');
         Route::get('/{service}/order', [OrdersController::class, 'show'])->name('orders.show');
-        Route::post('/{service}/pay', [OrdersController::class, 'pay'])->name('orders.pay')->middleware(['password.confirm']);
+        Route::post('/{service}/pay', [OrdersController::class, 'pay'])->name('orders.pay');
+        // ->middleware(['password.confirm'])
         Route::post('/', [OrdersController::class, 'store'])->name('orders.store');
         Route::delete('/{order}', [OrdersController::class, 'destroy'])->name('orders.destroy');
     });

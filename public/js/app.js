@@ -5062,9 +5062,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _components_WishlistButton_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/WishlistButton.vue */ "./resources/js/components/WishlistButton.vue");
-/* harmony import */ var _components_FollowButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/FollowButton.vue */ "./resources/js/components/FollowButton.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var _components_WishlistButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/WishlistButton.vue */ "./resources/js/components/WishlistButton.vue");
+/* harmony import */ var _components_FollowButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/FollowButton.vue */ "./resources/js/components/FollowButton.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -5076,6 +5076,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 // import 'jquery-ui/themes/base/all.css';
 // import 'jquery-ui/ui/widgets/autocomplete.js';
 
+vue__WEBPACK_IMPORTED_MODULE_0__.default.prototype.$ = $;
+window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+window.JQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+__webpack_require__.g.$ = __webpack_require__.g.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -5088,7 +5092,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 
 
- // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+console.log("testt"); // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -5097,11 +5102,11 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
  */
 
 window.onload = function () {
-  var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
+  var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     el: '#app',
     components: {
-      FollowButton: _components_FollowButton_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-      WishlistButton: _components_WishlistButton_vue__WEBPACK_IMPORTED_MODULE_0__.default
+      FollowButton: _components_FollowButton_vue__WEBPACK_IMPORTED_MODULE_2__.default,
+      WishlistButton: _components_WishlistButton_vue__WEBPACK_IMPORTED_MODULE_1__.default
     }
   });
 };
@@ -5121,9 +5126,10 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  * code may be modified to fit the specific needs of your application.
  */
 
+window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
 try {
   window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js").default;
-  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 } catch (e) {}

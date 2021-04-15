@@ -14,31 +14,45 @@
                         <div class="col-md-12 text-muted mb-3">Found {{ $services->count() }} results</div>
 
                         @foreach ($services as $service)
-
-                            <div class="col mb-4 link-web">
-                                <a href="{{ route('services.show', $service) }}">
-                                    <div class="card h-100 rounded" style="width: 12rem;">
-                                        <img src="{{ asset($service->serviceImage()) }}" class="card-img-top"
-                                            style="width: 12rem; height: 12rem; background-size: cover; background-position: center;">
-                                        <div class="card-body">
-                                            <h6 class="card-title">{{ $service->name }}</h6>
-                                            <h5 class="card-text"> Rp. {{ number_format($service->price) }}</h5>
-                                            @php
-                                                $average = $service->ratings->average('rating');
-                                            @endphp
+                            <div class="col-md-4 link-web">
+                                <div class="productbox">
+                                    <div class="fadeshop">
+                                        <div class="captionshop text-center">
+                                            <h3>{{ $service->seller->sellername }}</h3>
+                                            <p>
+                                                {{ Str::of($service->description)->title()->words(59) }}
+                                            </p>
+                                            <p>
+                                                <a href="{{ route('orders.show', $service) }}"
+                                                    class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
+                                                    Purchase</a>
+                                                <a href="{{ route('services.show', $service) }}"
+                                                    class="learn-more detailslearn"><i class="fa fa-link"></i>
+                                                    Details</a>
+                                            </p>
                                         </div>
-
+                                        <span class="maxproduct"><img src="{{ asset($service->serviceImage()) }}"
+                                                alt=""></span>
+                                    </div>
+                                    <div class="product-details">
+                                        <a href="{{ route('services.show', $service) }}">
+                                            <h1>{{ $service->name }}</h1>
+                                        </a>
+                                        <span class="price">
+                                            <span class="edd_price">Rp. {{ number_format($service->price) }}</span>
+                                        </span>
+                                        @php
+                                            $average = $service->ratings->average('rating');
+                                        @endphp
                                         @if ($average != 0)
-                                            <div class="card-footer">
-                                                <div class="ratingindex">
-                                                    <span class="icon">★</span>
-                                                </div>
-                                                <span class=""><strong> {{ number_format($average, 1) }}</strong><span
+                                            <div class="price">
+                                                <span class="edd_price"><span class="icon">★</span><strong>
+                                                        {{ number_format($average, 1) }}</strong> <span
                                                         class="text-muted">({{ $service->ratings->count() }})</span></span>
                                             </div>
                                         @endif
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         @endforeach
                     @else

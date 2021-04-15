@@ -10,7 +10,10 @@ window.Vue = require('vue');
 // // gg this is the way to import jquery ui to the app
 // import 'jquery-ui/themes/base/all.css';
 // import 'jquery-ui/ui/widgets/autocomplete.js';
-
+Vue.prototype.$ = $;
+window.$ = require('jquery')
+window.JQuery = require('jquery')
+global.$ = global.jQuery = require('jquery');
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -21,11 +24,11 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
 import Vue from 'vue'
 import WishlistButton from './components/WishlistButton.vue';
 import FollowButton from './components/FollowButton.vue';
-
-
+console.log("testt");
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
@@ -34,10 +37,13 @@ import FollowButton from './components/FollowButton.vue';
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
  window.onload = function () {
 const app = new Vue({
     el: '#app',
     components:{FollowButton,WishlistButton}
 
 });
+
+
 }
