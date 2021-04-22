@@ -50,5 +50,7 @@ class DatabaseSeeder extends Seeder
             'revision_time' => '5',
             'image' => 'Q9mKsJMGTeRbYwJiHxzT86lN4rZ5tTvjXdEeOLvp.jpg'
         ]);
+        $this->call(PermissionTableSeeder::class);
+        $this->call(CreateAdminUserSeeder::class);
     }
 }

@@ -26,7 +26,7 @@ class CreateAdminUserSeeder extends Seeder
 
         $permissions = Permission::pluck('id', 'id')->all();
 
-        Role::firstWhere('name', 'Admin')->syncPermissions($permissions);
+        $role->syncPermissions($permissions);
 
         $user->assignRole([Role::firstWhere('name', 'Admin')->id]);
     }

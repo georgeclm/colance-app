@@ -47,7 +47,6 @@
                     <div class="row row-cols-1 row-cols-md-6">
                         @if ($services->count())
                             <div class="col-md-12 text-muted mb-3">Found {{ $services->count() }} results</div>
-
                             @foreach ($services as $service)
                                 <div class="col-md-4 link-web">
                                     <div class="productbox">

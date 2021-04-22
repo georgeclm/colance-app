@@ -43,6 +43,7 @@ class ServicesController extends Controller
     function show(Service $service)
     {
         // dd($service->seller->user->id);
+        // dd($service->serviceImage());
         $favorite = (auth()->user()) ? auth()->user()->favorite->contains($service->id) : false;
         // dd($service->ratings->count());
         $stars = array();
@@ -84,7 +85,7 @@ class ServicesController extends Controller
         // dimensions:ratio=3/2
         $extension = $request->image->extension();
         // change the public to s3
-        request('image')->storeAs('service', request('image')->hashName(), 'public');
+        request('image')->storeAs('public/service', request('image')->hashName());
         // dd($request->image->hashName());
 
         $service = new Service;
@@ -136,10 +137,9 @@ class ServicesController extends Controller
 
         if (request('image')) {
             // change the public to s3
-            request('image')->storeAs('service', request('image')->hashName(), 'public');
+            request('image')->storeAs('public/service', request('image')->hashName());
             $imageArray = ['image' => request('image')->hashName()];
         }
-
         $service->update(array_merge(
             $data,
             $imageArray ?? []

@@ -35,7 +35,7 @@ class SellersController extends Controller
             ]);
             // Storage::putFileAs('profile', request()->file('image'), request('image')->hashName());
             // change the public to s3
-            request('image')->storeAs('profile', request('image')->hashName(), 'public');
+            request('image')->storeAs('public/profile', request('image')->hashName());
             $seller->image = request('image')->hashName();
         } else {
             $seller->image = "jAZHCrXvUSsoh3BtdypreKvz8tz0M4DEnDOfvvDt.png";
@@ -73,7 +73,7 @@ class SellersController extends Controller
         if (request('image')) {
             // Storage::putFileAs('profile', request()->file('image'), request('image')->hashName(), 'public');
             // change the public to s3
-            request('image')->storeAs('profile', request('image')->hashName(), 'public');
+            request('image')->storeAs('public/profile', request('image')->hashName());
             $imageArray = ['image' => request('image')->hashName()];
         }
 

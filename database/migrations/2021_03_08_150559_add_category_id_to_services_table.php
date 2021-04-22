@@ -26,7 +26,7 @@ class AddCategoryIdToServicesTable extends Migration
     public function down()
     {
         Schema::table('services', function (Blueprint $table) {
-            //
+            $table->dropForeign('category_id');
         });
     }
 }

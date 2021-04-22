@@ -12,7 +12,7 @@ class Seller extends Model
     {
         // folder inside the public path for default image
         $imagePath = ($this->image) ? $this->image : 'no-image.png';
-        return 'uploads/profile/' . $imagePath;
+        return 'storage/profile/' . $imagePath;
     }
 
     protected $guarded = [];

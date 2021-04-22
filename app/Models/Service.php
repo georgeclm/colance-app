@@ -14,7 +14,7 @@ class Service extends Model
     {
         // folder inside the public path for default image
         $imagePath = ($this->image) ? $this->image : 'no-image.png';
-        return 'uploads/service/' . $imagePath;
+        return 'storage/service/' . $imagePath;
     }
 
     public function seller()
