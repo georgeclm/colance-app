@@ -103,7 +103,7 @@ class MessagesController extends Controller
             $thread->addParticipant($input['recipients']);
         }
 
-        return redirect()->route('messages');
+        return redirect()->back()->with('success', 'Message Have Been Sent');
     }
 
     /**

@@ -57,8 +57,7 @@
                                 <hr class="my-4">
                                 <a class="btn btn-lg btn-google text-uppercase" href="{{ url('auth/google') }}"><i
                                         class="fa fa-google mr-4"></i> {{ __('Sign Up With Google') }}</a>
-                                <a class="btn btn-lg btn-facebook text-uppercase" href="{{ url('auth/facebook') }}"><i
-                                        class="fa fa-facebook-f mr-4"></i> {{ __('Sign Up With Facebook') }}</a>
+
                                 <a class="btn btn-lg btn-twitter text-uppercase" href="{{ url('auth/twitter') }}"><i
                                         class="fa fa-twitter mr-4"></i> {{ __('Sign Up With Twitter') }}</a>
                             </div>

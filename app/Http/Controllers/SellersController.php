@@ -46,7 +46,7 @@ class SellersController extends Controller
         $seller->user->assignRole('Seller');
 
 
-        return redirect('/');
+        return redirect()->route('sellers.show', $seller)->with('success', 'Sell Awesome Service Now');
     }
     function show(Seller $seller)
     {

@@ -32,7 +32,6 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/la/{locale}', function ($locale) {
-
     Session::put('locale', $locale);
     return redirect()->route('services.index');
 })->name('language');

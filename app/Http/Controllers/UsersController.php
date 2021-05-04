@@ -22,7 +22,7 @@ class UsersController extends Controller
     function update(User $user)
     {
         // dd(request()->all());
-        $data = request()->validate(['name' => 'required', 'email' => ['required', 'email', 'unique:users']]);
+        $data = request()->validate(['name' => 'required']);
         $user->update($data);
         return redirect()->back()->with('success', 'Profile have been updated');
     }

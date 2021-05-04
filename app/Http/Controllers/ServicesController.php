@@ -36,9 +36,9 @@ class ServicesController extends Controller
         // dd(auth()->user()->seller);
         $categories = Category::all();
         $services = Service::with('ratings')->paginate(30);
-        // dd(auth()->user()->roles->first()->name);
-        // dd(app()->getLocale());
-        App::setLocale(session('locale'));
+        if (session('locale')) {
+            App::setLocale(session('locale'));
+        }
         // dd(session('locale'));
         $first = $services[0]->id;
         return view('service.index', compact('services', 'first', 'categories'));
@@ -105,7 +105,7 @@ class ServicesController extends Controller
         $service->category_id = $request->category_id;
         $service->save();
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with('success', 'Services Have Been Uploaded');
     }
 
     function search(Request $request)
@@ -157,6 +157,6 @@ class ServicesController extends Controller
     public function destroy(Service $service)
     {
         Service::destroy($service->id);
-        return redirect()->route('sellers.show', auth()->user())->with('success', 'Gig Have Been Removed');
+        return redirect()->route('sellers.show', auth()->user()->seller)->with('success', 'Gig Have Been Removed');
     }
 }
