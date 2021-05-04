@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', "{$category->name} Services - Colance")
 
-@section('content')
+@section('home')
     <div class="container">
         <div class="col-sm-4">
             <a href="#" class="btn btn-outline-secondary">Filter</a>
@@ -19,9 +19,12 @@
                                         {{ Str::of($service->description)->title()->words(59) }}
                                     </p>
                                     <p>
-                                        <a href="{{ route('orders.show', $service) }}" class="learn-more detailslearn"><i
-                                                class="fa fa-shopping-cart"></i>
-                                            Purchase</a>
+                                        @if ($service->seller->user()->isNot(auth()->user()))
+
+                                            <a href="{{ route('orders.show', $service) }}"
+                                                class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
+                                                Purchase</a>
+                                        @endif
                                         <a href="{{ route('services.show', $service) }}"
                                             class="learn-more detailslearn"><i class="fa fa-link"></i>
                                             Details</a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class ServicesController extends Controller
 {
@@ -36,6 +37,9 @@ class ServicesController extends Controller
         $categories = Category::all();
         $services = Service::with('ratings')->paginate(30);
         // dd(auth()->user()->roles->first()->name);
+        // dd(app()->getLocale());
+        App::setLocale(session('locale'));
+        // dd(session('locale'));
         $first = $services[0]->id;
         return view('service.index', compact('services', 'first', 'categories'));
     }

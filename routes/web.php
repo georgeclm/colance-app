@@ -15,8 +15,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/la/{locale}', function ($locale) {
+
+    Session::put('locale', $locale);
+    return redirect()->route('services.index');
+})->name('language');
 Auth::routes();
+
 // for the search using ajax
 Route::get("/search", [ServicesController::class, 'search'])->name('search');
 Route::get('autocomplete', [ServicesController::class, 'autocomplete'])->name('autocomplete');

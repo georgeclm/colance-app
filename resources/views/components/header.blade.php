@@ -1,5 +1,6 @@
 <div>
-    <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top border-bottom border-light border-5">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom border-light border-5"
+        style="background-color: #87CEEB">
         <div class="container-fluid" style="width:95%">
             <a class="navbar-brand" href="{{ route('services.index') }}">
                 <img src="{{ asset('img/Logo_text.png') }}" alt="" width="90" height="" class="">
@@ -44,19 +45,21 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link @if ($order) active @endif" href="{{ route('orders.index', auth()->user()) }}">Orders</a>
+                                <a class="nav-link @if ($order) active @endif" href="{{ route('orders.index', auth()->user()) }}">{{ __('lang.orders') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link @if ($chat) active @endif" href="{{ route('messages') }}">Message @include('messenger.unread-count')</a>
+                                <a class="nav-link @if ($chat) active @endif" href="{{ route('messages') }}">{{ __('lang.message') }}
+                                    @include('messenger.unread-count')</a>
                             </li>
                         @endif
 
                     @endauth
+
                 </ul>
-                <div class="col-md-6 text-center">
+                <div class="col-md-5 text-center">
                     <form action="{{ route('search') }}" class="d-flex container-fluid" autocomplete="off">
                         <input class="typeahead form-control me-2" type="text" placeholder="Find Services" name="query">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-success" type="submit">{{ __('lang.search') }}</button>
                     </form>
 
                 </div>
@@ -74,20 +77,33 @@
                         @if (auth()->user()->roles->first() != null &&
         auth()->user()->roles->first()->name == 'Admin')
                         @else
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                @if (app()->getLocale() == 'id') Indonesia @else
+                                        English @endif
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('language', 'id') }}">Indonesia</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('language', 'en') }}">English</a>
+                                    </li>
+
+                                </ul>
                             <li class="nav-item">
                                 <a class="nav-link @if ($wishlist) active @endif" href="{{ route('wishlists.show') }}"> <span
                                         class="badge badge-pill bg-danger">{{ auth()->user()->favorite->count() }}</span>
-                                    Wishlist</a>
+                                    {{ __('lang.wishlist') }}</a>
                             </li>
                             @if (auth()->user()->seller)
                                 <li class="nav-item">
-                                    <a class="nav-link text-success"
-                                        href="{{ route('sellers.show', auth()->user()->seller) }}">Switch To
-                                        Selling</a>
+                                    <a class="nav-link" style="color: #1f157a"
+                                        href="{{ route('sellers.show', auth()->user()->seller) }}">{{ __('lang.switchtoselling') }}</a>
                                 </li>
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link text-success" href="{{ route('sellers.create') }}">Become a
+                                    <a class="nav-link" style="color: #1f157a"
+                                        href="{{ route('sellers.create') }}">Become a
                                         seller</a>
                                 </li>
 
@@ -100,12 +116,12 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item"
-                                        href="{{ route('profiles.edit', auth()->user()) }}">Profile</a>
+                                        href="{{ route('profiles.edit', auth()->user()) }}">{{ __('lang.profile') }}</a>
                                 </li>
 
                                 <li><a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('lang.logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

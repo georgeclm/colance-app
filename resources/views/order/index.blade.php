@@ -17,7 +17,7 @@
                         <div class="row searched-item cart-list-divider">
                             <div class="col-sm-3">
                                 <a href="{{ route('services.show', $order->service_id) }}">
-                                    <img width="150" src="{{ asset("uploads/service/{$order->image}") }}">
+                                    <img width="150" src="{{ asset("storage/service/{$order->image}") }}">
                                 </a>
                             </div>
                             <div class="col-sm-7">

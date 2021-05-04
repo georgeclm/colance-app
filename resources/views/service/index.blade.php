@@ -41,7 +41,7 @@
 
     <div class="container mb-5 mt-5">
         <div class="col-md-12">
-            <h3 class='mb-4'>Trending Services</h3>
+            <h3 class='mb-4'>{{ __('lang.trendingservice') }}</h3>
             <div class="row row-cols-1 row-cols-md-6">
                 @if ($services->count())
                     <div class="col-md-12 text-muted mb-3">Found {{ $services->count() }} results</div>
@@ -56,9 +56,11 @@
                                             {{ Str::of($service->description)->title()->words(59) }}
                                         </p>
                                         <p>
-                                            <a href="{{ route('orders.show', $service) }}"
-                                                class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
-                                                Purchase</a>
+                                            @if ($service->seller->user()->isNot(auth()->user()))
+                                                <a href="{{ route('orders.show', $service) }}"
+                                                    class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
+                                                    Purchase</a>
+                                            @endif
                                             <a href="{{ route('services.show', $service) }}"
                                                 class="learn-more detailslearn"><i class="fa fa-link"></i>
                                                 Details</a>
