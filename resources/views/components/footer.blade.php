@@ -1,6 +1,6 @@
 <div>
     <br><br><br><br><br><br><br><br>
-
+    <hr>
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
             <div class="row">
@@ -20,14 +20,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">cavidjaja@gmail.com</h5>
+                    <h5 class="text-uppercase">Colance@gmail.com</h5>
                     <h5 class="text-uppercase mb-4">089647590083</h5>
                     <a class="btn btn-outline-dark btn-lg" href="https://georgeclm.github.io/" target="_blank">Visit My
                         Website</a>
                 </div>
             </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="text-center p-3" style="background-color: #67DAFF">
             © 2021 By Epafroditus George
         </div>
     </footer>
