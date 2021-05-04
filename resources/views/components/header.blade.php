@@ -67,10 +67,10 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Sign In') }}</a>
+                            <a class="nav-link me-3" href="{{ route('login') }}">{{ __('Sign In') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+                            <button class="btn btn-success" style="padding: 1px 10px;"><a class="nav-link" href="{{ route('register') }}">{{ __('Join') }}</a></button>
                         </li>
 
                     @else
