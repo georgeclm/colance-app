@@ -20,8 +20,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Colance@gmail.com</h5>
-                    <h5 class="text-uppercase mb-4">089647590083</h5>
+                    <div class="h5 text-uppercase">Colance@gmail.com</div>
+                    <div class="h5 text-uppercase mb-4">089647590083</div>
                     <a class="btn btn-outline-dark btn-lg" href="https://georgeclm.github.io/" target="_blank">Visit My
                         Website</a>
                 </div>

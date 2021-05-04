@@ -5,7 +5,7 @@
     <div class="container custom-login">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-sm-offset-4">
-                <h4>Seller Profile</h4>
+                <div class="h4">Seller Profile</div>
                 <form action="{{ route('sellers.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">

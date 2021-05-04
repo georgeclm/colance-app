@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-sm-offset-4">
-                <h4>Edit your Gig</h4>
+                <div class="h4">Edit your Gig</div>
                 <form action="{{ route('services.update', $service) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('patch')

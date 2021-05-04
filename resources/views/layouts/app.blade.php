@@ -40,7 +40,7 @@
         @if (session('success'))
             <div class="alert alert-success">
                 <ul>
-                    <h6>{{ session('success') }}</h6>
+                    <div class="h6">{{ session('success') }}</div>
                 </ul>
             </div>
         @endif
@@ -351,27 +351,32 @@
     .cover-container {
         max-width: 42em;
     }
-    h1{
-    font-size: 36px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+
+    h1 {
+        font-size: 36px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
     }
-    h2{
-    font-size: 24px;
-    font-family: 'Poppins', sans-serif;
-    line-height: 150%;
-    font-weight: 400;
+
+    h2 {
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        line-height: 150%;
+        font-weight: 400;
     }
-    h3{
+
+    h3 {
         font-size: 21px;
         font-family: 'Poppins', sans-serif;
     }
-    h4{
+
+    h4 {
         font-size: 12px;
         font-family: 'Roboto', sans-serif;
         font-weight: normal;
     }
-    .bold{
+
+    .bold {
         font-weight: 600;
     }
 
@@ -565,7 +570,8 @@
         color: #000;
         text-shadow: 0 0 5px #09f;
     }
-    .text1{
+
+    .text1 {
         width: 600px;
     }
 

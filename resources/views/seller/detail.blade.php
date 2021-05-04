@@ -13,7 +13,7 @@
                 <a href="{{ route('services.index') }}" class="btn btn-outline-primary mb-3">Back</a>
                 <h2><strong>{{ $seller->sellername }}</strong></h2>
                 <h3>{{ $seller->address }}</h3>
-                <a class="h3" href="{{ $seller->url }}" target="blank">{{ $seller->url }}</a>
+                <a class="h4" href="{{ $seller->url }}" target="blank">{{ $seller->url }}</a>
                 <div class="h4 mt-2">
                     <strong>{{ $seller->followers->count() }}</strong>
                     followers
@@ -31,9 +31,8 @@
                         Seller
                         Profile</a>
                 </div>
-            @else
-                <follow-button route={{ route('follows.add', $seller->id) }} follows="{{ $follows }}">
-                </follow-button>
+
+
             @endif
 
         </div>

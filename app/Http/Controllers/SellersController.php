@@ -52,9 +52,8 @@ class SellersController extends Controller
     {
 
         $services = Service::where('seller_id', $seller->id)->get();
-        $follows = (auth()->user()) ? auth()->user()->following->contains($seller->id) : false;
 
-        return view('seller.detail', compact('seller', 'services', 'follows'));
+        return view('seller.detail', compact('seller', 'services'));
     }
     public function edit(Seller $seller)
     {

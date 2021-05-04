@@ -14,7 +14,7 @@
 
                 @endphp
                 @if ($services->count() != 0)
-                    <h2 class="mb-3">Your Wishlist</h2>
+                    <h2 class="mb-3">{{ __('lang.wishlist') }}</h2>
                     <br><br>
 
                     @foreach ($services as $service)
@@ -26,9 +26,9 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="">
-                                    <h2>{{ $service->name }}</h2>
-                                    <h5>{{ Str::limit($service->description, 25) }}</h5>
-                                    <h5>Rp. {{ number_format($service->price) }}</h5>
+                                    <div class="h2">{{ $service->name }}</div>
+                                    <div class="h5">{{ Str::limit($service->description, 25) }}</div>
+                                    <div class="h5">Rp. {{ number_format($service->price) }}</div>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -51,9 +51,9 @@
                 @else
                     <div class="d-grid gap-2 col-5 mx-auto text-center">
                         <br><br>
-                        <h2 class="mb-3 fs-1">Wishlist is empty </h2>
-                        <a class="btn btn-outline-primary btn-lg" href="{{ route('services.index') }}">Start
-                            Shopping</a>
+                        <h2 class="mb-3 fs-1">{{ __('lang.wishlistempty') }}</h2>
+                        <a class="btn btn-outline-primary btn-lg"
+                            href="{{ route('services.index') }}">{{ __('lang.shopping') }}</a>
                     </div>
 
                 @endif

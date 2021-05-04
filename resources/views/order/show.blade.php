@@ -52,7 +52,7 @@
 
                     </div>
                     <div class="col-md-2">
-                        <h5>Rp. {{ number_format($service->price) }}</h5>
+                        <div class="h5">Rp. {{ number_format($service->price) }}</div>
 
                     </div>
 

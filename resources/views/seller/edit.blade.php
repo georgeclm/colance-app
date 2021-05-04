@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-sm-offset-4">
-                <h4>Edit your Seller Profile</h4>
+                <div class="h4">Edit your Seller Profile</div>
                 <form action="{{ route('sellers.update', $seller) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
@@ -55,9 +55,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Seller Image</label>
-                        <input type="file" name="image" class="form-control @error('image')
-                                                                                                is-invalid @enderror"
-                            id="exampleInputEmail1" value="{{ old('image') }}" aria-describedby="emailHelp">
+                        <input type="file" name="image"
+                            class="form-control @error('image')
+                                                                                                        is-invalid @enderror" id="exampleInputEmail1"
+                            value="{{ old('image') }}" aria-describedby="emailHelp">
                         @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

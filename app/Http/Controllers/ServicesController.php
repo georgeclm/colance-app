@@ -18,7 +18,7 @@ class ServicesController extends Controller
     // }
     function getDownload(Service $service)
     {
-        $file = public_path() . "/uploads/service/{$service->image}";
+        $file = public_path() . "/storage/service/{$service->image}";
         // to show the file
         // return response()->file($file);
         return response()->download($file, $service->name . ".jpg");
@@ -49,6 +49,8 @@ class ServicesController extends Controller
         // dd($service->seller->user->id);
         // dd($service->serviceImage());
         $favorite = (auth()->user()) ? auth()->user()->favorite->contains($service->id) : false;
+        $follows = (auth()->user()) ? auth()->user()->following->contains($service->seller->id) : false;
+
         // dd($service->ratings->count());
         $stars = array();
 
@@ -64,7 +66,7 @@ class ServicesController extends Controller
             $average = 0;
         }
 
-        return view('service.detail', compact('service', 'favorite', 'average', 'stars'));
+        return view('service.detail', compact('service', 'favorite', 'average', 'stars', 'follows'));
     }
 
     public function create()

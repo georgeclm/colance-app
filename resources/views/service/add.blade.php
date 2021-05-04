@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-sm-offset-4">
-                <h4>Add Your Service</h4>
+                <div class="h4">Add Your Service</div>
                 <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">

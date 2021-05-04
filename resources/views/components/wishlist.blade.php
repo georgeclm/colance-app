@@ -15,9 +15,9 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="">
-                                    <h2>{{ $service->name }}</h2>
-                                    <h5>{{ Str::limit($service->description, 25) }}</h5>
-                                    <h5>Rp. {{ number_format($service->price) }}</h5>
+                                    <div class="h2">{{ $service->name }}</div>
+                                    <div class="h5">{{ Str::limit($service->description, 25) }}</div>
+                                    <div class="h5">Rp. {{ number_format($service->price) }}</div>
                                 </div>
                             </div>
                             <div class="col-sm-3">

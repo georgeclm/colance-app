@@ -58,38 +58,42 @@
                 </ul>
                 <div class="col-md-5 text-center">
                     <form action="{{ route('search') }}" class="d-flex container-fluid" autocomplete="off">
-                        <input class="typeahead form-control me-2" type="text" placeholder="Find Services" name="query">
+                        <input class="typeahead form-control me-2" type="text" placeholder="{{ __('lang.searchp') }}"
+                            name="query">
                         <button class="btn btn-success" type="submit">{{ __('lang.search') }}</button>
                     </form>
 
                 </div>
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        @if (app()->getLocale() == 'id') Indonesia @else
+                                English @endif
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('language', 'id') }}">Indonesia</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('language', 'en') }}">English</a>
+                            </li>
+
+                        </ul>
+                    </li>
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link me-3" href="{{ route('login') }}">{{ __('Sign In') }}</a>
+                            <a class="nav-link me-3" href="{{ route('login') }}">{{ __('lang.signin') }}</a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-success" style="padding: 1px 10px;"><a class="nav-link" href="{{ route('register') }}">{{ __('Join') }}</a></button>
+                            <button class="btn btn-success btn-sm" style="padding: 1px 10px;"><a class="nav-link"
+                                    href="{{ route('register') }}">{{ __('lang.join') }}</a></button>
                         </li>
 
                     @else
                         @if (auth()->user()->roles->first() != null &&
         auth()->user()->roles->first()->name == 'Admin')
                         @else
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                @if (app()->getLocale() == 'id') Indonesia @else
-                                        English @endif
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('language', 'id') }}">Indonesia</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="{{ route('language', 'en') }}">English</a>
-                                    </li>
 
-                                </ul>
                             <li class="nav-item">
                                 <a class="nav-link @if ($wishlist) active @endif" href="{{ route('wishlists.show') }}"> <span
                                         class="badge badge-pill bg-danger">{{ auth()->user()->favorite->count() }}</span>
@@ -103,8 +107,7 @@
                             @else
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #1f157a"
-                                        href="{{ route('sellers.create') }}">Become a
-                                        seller</a>
+                                        href="{{ route('sellers.create') }}">{{ __('lang.becomeaseller') }}</a>
                                 </li>
 
                             @endif

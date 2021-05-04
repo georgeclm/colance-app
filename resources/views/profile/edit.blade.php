@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-sm-offset-4">
-                <h4>Your Profile</h4>
+                <div class="h4">Your Profile</div>
                 <form action="{{ route('profiles.update', $user) }}" method="POST">
                     @csrf
                     @method('patch')

@@ -22,18 +22,18 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1"
                                 value="Gopay">
-                            <label class="form-check-label h3" for="flexRadioDefault1"> Gopay
+                            <label class="form-check-label h4" for="flexRadioDefault1"> Gopay
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1" value="OVO">
-                            <label class="form-check-label h3" for="flexRadioDefault1"> OVO
+                            <label class="form-check-label h4" for="flexRadioDefault1"> OVO
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1"
                                 value="Credit">
-                            <label class="form-check-label h3" for="flexRadioDefault1"> Credit
+                            <label class="form-check-label h4" for="flexRadioDefault1"> Credit
                                 & Debit Card
                             </label>
                         </div>

@@ -10,8 +10,8 @@
                         <img src="{{ asset($service->serviceImage()) }}" class="card-img-top"
                             style="width: 12rem; height: 12rem; background-size: cover; background-position: center;">
                         <div class="card-body">
-                            <h6 class="card-title">{{ $service->name }}</h6>
-                            <h5 class="card-text"> Rp. {{ number_format($service->price) }}</h5>
+                            <div class="h6 card-title">{{ $service->name }}</div>
+                            <div class="h5 card-text"> Rp. {{ number_format($service->price) }}</div>
                             @php
                                 $average = $service->ratings->average('rating');
                             @endphp
